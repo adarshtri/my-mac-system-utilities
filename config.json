@@ -1,6 +1,5 @@
 {
   "battery_checker": {
-    "active": true,
-    "interval": 2
+    "active": true
   }
 }
