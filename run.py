@@ -1,5 +1,5 @@
-from conf_lib import get_configuration, handle_config, get_configuration_file
-from util_lib import notify, check_battery
+from lib.conf_lib import get_configuration, handle_config, get_configuration_file
+from lib.util_lib import notify, check_battery
 
 
 @handle_config

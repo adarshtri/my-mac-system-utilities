@@ -1,6 +1,5 @@
 import os
 import psutil
-from conf_lib import get_configuration
 
 
 # battery checker
