@@ -1,5 +1,7 @@
 {
   "battery_checker": {
-    "active": true
+    "active": true,
+    "min": 25,
+    "max": 95
   }
 }

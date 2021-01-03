@@ -1,5 +1,6 @@
 import os
 import psutil
+from conf_lib import get_configuration
 
 
 # battery checker
@@ -21,43 +22,43 @@ def is_battery_charging():
     return battery.power_plugged
 
 
-def should_plugin_battery_charging():
+def should_plugin_battery_charging(minimum):
     
     # returns true if the battery should be plugged in for charging
     # else return False
     
-    if get_battery_status() < 25 and not is_battery_charging():
+    if get_battery_status() < minimum and not is_battery_charging():
         return True
     else:
         return False
     
 
-def should_plug_out_battery_charging():
+def should_plug_out_battery_charging(maximum):
     
     # returns true if the battery is charged and
     # should be plugged out else return false
     
-    if get_battery_status() == 100 and is_battery_charging():
+    if get_battery_status() > maximum and is_battery_charging():
         return True
     else:
         return False
 
 
-def notify(title, text):
+def notify(title, text, subtitle):
     
     # create a system notification on mac
     
     os.system("""
-              osascript -e 'display notification "{}" with title "{}"'
-              """.format(text, title))
+              osascript -e 'display notification "{}" with title "{}" subtitle "{}" sound name "Ping"'
+              """.format(text, title, subtitle))
     
     
-def check_battery():
+def check_battery(minimum, maximum):
     
     # wrapper method to check for battery and create
     # suitable notification
 
-    if should_plugin_battery_charging():
-        notify("Battery Alert", "Low battery. Plugin power.")
-    elif should_plug_out_battery_charging():
-        notify("Battery Alert", "Battery charged. Plug out power.")
+    if should_plugin_battery_charging(minimum):
+        notify("Battery Alert", "Low battery. Plugin power.", "Below {}%".format(minimum))
+    elif should_plug_out_battery_charging(maximum):
+        notify("Battery Alert", "Battery charged. Plug out power.", "More than {}%".format(maximum))

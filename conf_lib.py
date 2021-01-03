@@ -14,7 +14,7 @@ def configuration_directory_exist():
     if not home:
         return False
     
-    configuration_directory = home + ".config/my-mac-system-utilities/"
+    configuration_directory = home + "/.config/my-mac-system-utilities/"
     
     return os.path.isdir(configuration_directory)
 
