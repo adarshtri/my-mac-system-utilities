@@ -3,5 +3,18 @@
     "active": true,
     "min": 25,
     "max": 95
+  },
+  "directory_cleaner": {
+    "active": true,
+    "directories": {
+
+      "/Users/atrivedi/Projects/tmp/": {
+        "format_directory_map": {
+          "pdf": "PDF",
+          "py": "Python"
+        },
+        "active": true
+      }
+    }
   }
 }

@@ -1,5 +1,5 @@
 from lib.conf_lib import get_configuration, handle_config, get_configuration_file
-from lib.util_lib import notify, check_battery
+from lib.util_lib import notify, check_battery, clean_directory
 
 
 @handle_config
@@ -12,7 +12,10 @@ def run():
         exit(1)
     
     if configuration["battery_checker"]["active"]:
-        check_battery(get_configuration()["battery_checker"]["min"], get_configuration()["battery_checker"]["max"])
+        check_battery(get_configuration()["battery_checker"])
+        
+    if configuration["directory_cleaner"]["active"]:
+        clean_directory(configuration["directory_cleaner"])
 
 
 if __name__ == "__main__":
