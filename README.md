@@ -59,3 +59,42 @@ battery level to get a alert to unplug charging.
     min: 25, this means the utility will notify you to plugin if your battery level is less than 25 and you are not plugged in
     
     max: 95, this means the utility will notify you to plug out if your battery level is more than 95 and you are plugged in
+
+2. Directory cleaner and alert manager: If your "downloads" folder is always full of files with different and format and you
+wished someone could automatically sort it based on file formats behind your back, this utility is for you. It manages everything
+based on how you configure your directory cleaner in configuration file. It also gives you an alert on how many
+files have been cleared up in each directory.
+
+    Configurations for directory cleaner
+        
+    
+        "directory_cleaner": {
+            "active": true,
+            "directories": {
+
+                "/Users/atrivedi/Projects/tmp/": {
+                    "format_directory_map": {
+                        "pdf": "PDF",
+                        "py": "Python",
+                        "*": "other_format"
+                    },
+                    "active": true
+                }
+            }
+        }
+        
+    a. The configurations for directory cleaner go under the key "directory_cleaner". 
+
+    b. The "active" key under main "directory_cleaner" is to control the whole cleaner utility which when set to
+    true will run the cleaner otherwise would skip running it.
+
+    c. "directories" key specifies which all directories to watch for cleaning. 
+
+    d. "format_directory_map" is the key which tells which all file formats to watch
+    and where to put them once there is a new file with that format. So "pdf": "PDF" means if any .pdf file
+    comes in /Users/atrived/Projects/tmp then it will be moved to /Users/atrived/Projects/tmp/PDF. 
+
+    e. If you specify "*" in place of format, that means all other formats. So "*": "other_format" will put any file other than with extensions py and pdf to other_format directory of
+    /Users/atrived/Projects/tmp.
+
+    f. A directory level "active" configuration is provided to control every directory for cleanup.
