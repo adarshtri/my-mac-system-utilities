@@ -14,6 +14,26 @@
           "py": "Python"
         },
         "active": true
+      },
+
+      "/Users/atrivedi/Downloads": {
+        "format_directory_map": {
+          "pdf": "PDF",
+          "dmg": "dmgs",
+          "zip": "zips",
+          "doc": "docs",
+          "jpg": "jpgs",
+          "jpeg": "jpgs",
+          "ppt": "ppts",
+          "pptx": "ppts",
+          "html": "html",
+          "htm": "html",
+          "csv": "csv",
+          "json": "json",
+          "xlsx": "xlsx",
+          "*": "other_formats"
+        },
+        "active": true
       }
     }
   }

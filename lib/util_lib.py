@@ -127,6 +127,10 @@ def move_files_to_subdirectories(cleanup_directory, directory_config):
             copyfile(f, os.path.join(cleanup_directory, format_directory_map[file_format], f.split("/")[-1]))
             os.remove(f)
             files_moved += 1
+        elif "*" in format_directory_map:
+            copyfile(f, os.path.join(cleanup_directory, format_directory_map["*"], f.split("/")[-1]))
+            os.remove(f)
+            files_moved += 1
     
     if files_moved > 0:
         notify("Directory Cleaner", cleanup_directory, "Cleared {} files.".format(files_moved))
