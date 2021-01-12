@@ -46,7 +46,8 @@ steps to complete the setup of the services.
 
 ## Utilities supported
 
-1. Battery Checker and alert manager: If you are always worried of hurting your laptop's battery by leaving it plugged
+#### Battery Checker and alert manager
+If you are always worried of hurting your laptop's battery by leaving it plugged
 in this utility is for you. You can set minimum battery level to alert you to plugin the charger. And you can set maximum
 battery level to get a alert to unplug charging.
 
@@ -60,7 +61,8 @@ battery level to get a alert to unplug charging.
     
     max: 95, this means the utility will notify you to plug out if your battery level is more than 95 and you are plugged in
 
-2. Directory cleaner and alert manager: If your "downloads" folder is always full of files with different and format and you
+#### Directory cleaner and alert manager
+If your "downloads" folder is always full of files with different and format and you
 wished someone could automatically sort it based on file formats behind your back, this utility is for you. It manages everything
 based on how you configure your directory cleaner in configuration file. It also gives you an alert on how many
 files have been cleared up in each directory.
@@ -98,3 +100,51 @@ files have been cleared up in each directory.
     /Users/atrived/Projects/tmp.
 
     f. A directory level "active" configuration is provided to control every directory for cleanup.
+    
+
+#### Custom repeating and fixed time reminders
+We all need reminding to do stuff which we can easily forget. This utility is just to solve this specific problem.
+I build this reminders when I was doing my job search. It reminded me after every 30 minutes to open LinkedIn and
+look through new openings and apply. I also used to daily remind me at 10AM to do leetcode.
+
+    "custom_reminders": {
+        "active": true,
+        "reminders": {
+          "repeating": {
+            "45": [
+              {
+                "title": "Job Application",
+                "subtitle": "Apply to new jobs.",
+                "message": "Apply to jobs on LinkedIn.",
+                "say": "It is now or never.",
+                "active": true
+              }
+            ]
+          },
+          "fixed": {
+            "14:00": [
+              {
+                "title": "Test Reminder",
+                "subtitle": "This is a test reminder for fixed time.",
+                "message": "This is hello from reminder tool.",
+                "say": "This is hello from your reminder tool.",
+                "active": true
+              }
+            ]
+          }
+        }
+    }
+    
+You can configure two types of reminders, fixed time and repeating. Fixed type reminder is where you specify 
+things which you want to get reminded at some fixed time of the day. Repeating reminders are reminders which 
+triggers after every configured minutes. So for repeating reminders, a value of "15" means the reminder will 
+trigger at 15, 30, 45, 00 minutes of every hour.
+
+Every reminder needs to have five properties which are:
+
+1. "title": Title of the reminder.
+2. "subtitle": Subtitle of the reminder.
+3. "message": Reminder message.
+4. "say": The message that will be spoken by the system to you.
+5. "active": Whether this reminder is active or not. If not active no notification is sent for that
+particular reminder.

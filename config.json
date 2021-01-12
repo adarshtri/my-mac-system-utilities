@@ -45,18 +45,18 @@
     "active": true,
     "reminders": {
       "repeating": {
-        "2": [
+        "45": [
           {
-            "title": "Test Reminder",
-            "subtitle": "Reminding you every 2 minutes.",
-            "message": "This is hello from your reminder tool.",
-            "say": "This is hello from your reminder tool.",
+            "title": "Job Application",
+            "subtitle": "Apply to new jobs.",
+            "message": "Apply to jobs on LinkedIn.",
+            "say": "It is now or never.",
             "active": true
           }
         ]
       },
       "fixed": {
-        "14:20": [
+        "14:00": [
           {
             "title": "Test Reminder",
             "subtitle": "This is a test reminder for fixed time.",
