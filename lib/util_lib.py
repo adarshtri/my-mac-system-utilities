@@ -11,9 +11,11 @@ def check_battery(config):
     
     if config["active"]:
         if should_plugin_battery_charging(config["min"]):
-            notify("Battery Alert", "Low battery. Plugin power.", "Below {}%".format(config["min"]))
+            notify("Battery Alert", "Low battery. Plugin power.", "Below {}%".format(config["min"]),
+                   "Low battery alert. Please plugin power.")
         elif should_plug_out_battery_charging(config["max"]):
-            notify("Battery Alert", "Battery charged. Plug out power.", "More than {}%".format(config["max"]))
+            notify("Battery Alert", "Battery charged. Plug out power.", "More than {}%".format(config["max"]),
+                   "Battery charged to maximum. Please plug out power.")
 
             
 def clean_directory(config):
