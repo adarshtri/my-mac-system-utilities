@@ -36,5 +36,36 @@
         "active": true
       }
     }
+  },
+  "git_digger": {
+    "active": false,
+    "root": "/Users/atrivedi/"
+  },
+  "custom_reminders": {
+    "active": true,
+    "reminders": {
+      "repeating": {
+        "2": [
+          {
+            "title": "Test Reminder",
+            "subtitle": "Reminding you every 2 minutes.",
+            "message": "This is hello from your reminder tool.",
+            "say": "This is hello from your reminder tool.",
+            "active": true
+          }
+        ]
+      },
+      "fixed": {
+        "14:20": [
+          {
+            "title": "Test Reminder",
+            "subtitle": "This is a test reminder for fixed time.",
+            "message": "This is hello from reminder tool.",
+            "say": "This is hello from your reminder tool.",
+            "active": true
+          }
+        ]
+      }
+    }
   }
 }
