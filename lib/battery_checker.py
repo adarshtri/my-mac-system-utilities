@@ -23,7 +23,7 @@ def should_plugin_battery_charging(minimum):
     # returns true if the battery should be plugged in for charging
     # else return False
     
-    if get_battery_status() < minimum and not is_battery_charging():
+    if get_battery_status() <= minimum and not is_battery_charging():
         return True
     else:
         return False
@@ -33,7 +33,7 @@ def should_plug_out_battery_charging(maximum):
     # returns true if the battery is charged and
     # should be plugged out else return false
     
-    if get_battery_status() > maximum and is_battery_charging():
+    if get_battery_status() >= maximum and is_battery_charging():
         return True
     else:
         return False
