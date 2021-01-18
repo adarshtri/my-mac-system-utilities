@@ -2,6 +2,7 @@ from lib.dig_git import dig
 from lib.battery_checker import *
 from lib.directory_cleaner import *
 from lib.custom_reminders import remind
+from lib.space_checker import check_space
     
     
 def check_battery(config):
@@ -62,3 +63,14 @@ def custom_reminders(config):
     """
     
     remind(config=config)
+
+
+def space_checker(config):
+    
+    """
+    This method is a wrapper method which is called by run.py to give a space free alert.
+    :param config: The configuration for space checker picked from config file.
+    :return: None, should run return status.
+    """
+    
+    check_space(config=config)

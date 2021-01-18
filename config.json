@@ -67,5 +67,11 @@
         ]
       }
     }
+  },
+  "space_checker": {
+    "active": true,
+    "show_alert_when_less_than": 50,
+    "show_space_alert": true,
+    "show_space_alert_at": "21:15"
   }
 }

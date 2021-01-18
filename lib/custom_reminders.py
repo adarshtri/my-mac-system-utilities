@@ -17,7 +17,7 @@ def send_repeating_reminders(repeating_reminder_config: dict) -> None:
                         current_time = datetime.datetime.now()
                         current_minute = int(current_time.minute)
                         
-                        if current_minute % minute == 0:
+                        if current_minute % minute == 0 and current_minute != 0:
                             notify(title=repeating_reminder["title"],
                                    text=repeating_reminder["message"],
                                    subtitle=repeating_reminder["subtitle"],

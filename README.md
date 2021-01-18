@@ -148,3 +148,22 @@ Every reminder needs to have five properties which are:
 4. "say": The message that will be spoken by the system to you.
 5. "active": Whether this reminder is active or not. If not active no notification is sent for that
 particular reminder.
+
+
+#### Space Checker
+Generate alert when you are running low on space on your hard disk. Daily free space alert can also be configured.
+
+    "space_checker": {
+        "active": true,
+        "show_alert_when_less_than": 50,
+        "show_space_alert": true,
+        "show_space_alert_at": "21:15"
+    }
+    
+1. "active": Should the service run. If true, it runs otherwise doesn't.
+2. "show_alert_when_less_than": This parameter controls when to show low space alert. A value of 50 means when the
+storage space is less that 50GiB.
+3. "show_space_alert": This parameter enable to push daily notification for free space disk. If set to
+false no daily notification is sent. The only notification sent is when space is running low(i.e free space is 
+less than value of "show_alert_when_less_than").
+4. "show_space_alert_at": What time to show daily alert at if "show_space_alert" is set to true.

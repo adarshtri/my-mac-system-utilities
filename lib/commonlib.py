@@ -1,4 +1,5 @@
 import os
+import datetime
 
 
 def notify(title, text, subtitle, say=None):
@@ -22,3 +23,22 @@ def notify(title, text, subtitle, say=None):
         os.system("""
                 osascript -e 'say "{}"'
                 """.format(say))
+
+
+def get_current_time_parameters():
+    
+    """
+    This is a helper function which returns parameters of current time in dictionary.
+    :return: current time parameters.
+    """
+    
+    current_time = datetime.datetime.now()
+    
+    return {
+        "day": current_time.day,
+        "month": current_time.month,
+        "year": current_time.year,
+        "hour": current_time.hour,
+        "minute": current_time.minute,
+        "second": current_time.second
+    }

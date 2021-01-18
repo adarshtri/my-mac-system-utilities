@@ -1,5 +1,5 @@
 from lib.conf_lib import get_configuration, handle_config, get_configuration_file
-from lib.util_lib import notify, check_battery, clean_directory, dig_git, custom_reminders
+from lib.util_lib import notify, check_battery, clean_directory, dig_git, custom_reminders, space_checker
 
 
 @handle_config
@@ -25,6 +25,9 @@ def run():
         
     if configuration["custom_reminders"]["active"]:
         custom_reminders(config=configuration["custom_reminders"])
+        
+    if configuration["space_checker"]["active"]:
+        space_checker(config=configuration["space_checker"])
 
 
 if __name__ == "__main__":
